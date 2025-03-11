@@ -32,7 +32,7 @@ export default function StepTwo({nextStep, prevStep, updateFormData}) {
                     <p>We can stay connected. Provide your phone number, email, and address. </p>
                 </div>
                 <input type="text" name='email' placeholder='Enter your email e.g janedoe@gmail.com' onChange = {handleChange}/>
-                <input type="text" name='phone' placeholder='Enter your Phone Number e.g 08012345678' onChange = {handleChange}/>
+                <input type="number" name='phone' placeholder='Enter your Phone Number e.g 08012345678' onChange = {handleChange}/>
                 <input type="text" name='address' placeholder='Enter your Address e.g #5, Anywhere Sreet.' onChange = {handleChange}/>
 
                 <div className="buttonContainer">

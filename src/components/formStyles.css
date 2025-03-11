@@ -36,6 +36,47 @@
     border-radius: 1px solid #f1f1f1;
     font-size: 1.5rem;
 }
+ul {
+    width: 60%;
+    margin: 10px auto;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* background-color: rgb(185, 183, 183); */
+    border-radius: 8px;
+}
+ul h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: oblique;
+    color: grey;
+}
+ul li {
+    width: 50%;
+    list-style-type:square;
+    font-size: 1.2rem;
+    font-style: oblique;
+    color: grey;
+    margin-left: 5rem;
+}
+
+.toggleContainer{
+    width: 60%;
+    padding: 5px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+.toggleContainer button {
+    width: 6rem;
+    padding: 0.7rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: grey;
+    color: whitesmoke;
+}
 
 .buttonContainer {
     width: 60%; 
