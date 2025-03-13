@@ -4,6 +4,7 @@ import "./formStyles.css"
 export default function StepFour({nextStep, prevStep, updateFormData, sciSubjects, artSubjects}) {
 
     const [isScience, setIsScience] = useState(true);
+
     
     // const [data, setData] = useState([])
 
@@ -31,7 +32,7 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
                         <p>Toggle the button to view various compulsory and optional subjects</p>
                     </div>
 
-                <>
+                <div>
                   {
                     isScience ? (
                         <ul>
@@ -43,14 +44,14 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
                     ) : (
                         <ul>
                             <h3>Compulsory Art Subjects:</h3>
-                            {artSubjects.map(artSubject => {
+                            {artSubjects.map(artSubject => (
                                 <li key={artSubject}>{artSubject}</li>
-                            })}
+                            ))}
                         </ul>
                     )
                     
                   }                
-                </>  
+                </div>  
 
                     {/* <div>
                         <h3>Optional Science subjects: Choose from below</h3>

@@ -1,13 +1,9 @@
-import { useState } from 'react'
-import './App.css'
-import MultiStepForm from "../src/components/MultiStepForm"
+import { AppRouter } from './Routes/AppRouter'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-     <MultiStepForm />
+    <AppRouter />
     </>
   )
 }

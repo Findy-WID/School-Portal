@@ -30,11 +30,10 @@ export default function StepThree({nextStep, prevStep, updateFormData}) {
                 <div className="formContainer">
                     <div className="formheader">
                         <h1>Student Registeration</h1>
-                        <p>Fill in the form below to register as a student.</p>
+                        <p>Let's get your student account secured.</p>
                     </div>
-                    <input type="text" name='password' placeholder='Enter your Password' onChange = {handleChange}/>
-                    <input type="text" name='confirmPassword' placeholder='Confirm your Password' onChange = {handleChange}/>
-                    {/* <input type="text" name='class' placeholder='Enter your class' onChange = {handleChange}/> */}
+                    <input type="password" name='password' placeholder='Enter your Password' onChange = {handleChange}/>
+                    <input type="password" name='confirmPassword' placeholder='Confirm your Password' onChange = {handleChange}/>
 
                     <div className="buttonContainer">
                         <button className="prev" onClick={handlePrev}>Previous</button>
