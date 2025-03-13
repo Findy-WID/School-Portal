@@ -6,17 +6,34 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
     const [isScience, setIsScience] = useState(true);
 
     
-    // const [data, setData] = useState([])
+    const [data, setData] = useState({
+        subjects: []
+    })
 
-    // const handleChange = (e) => {
-    //     setData({
-    //         ...data, [e.target.name]: e.target.value
-    //     });
-    // };    
+    const handleChange = (e) => {
+        const subject = e.target.value;
+        const isChecked = e.target.checked;
 
-    const handleNext = () => {
+        setData((prev) => {
+            let upDatedSubjects = [...prev.subjects];
+
+            if (isChecked) {
+                upDatedSubjects.push(subject);
+            } else {
+                upDatedSubjects = upDatedSubjects.filter((subj) => subj !== subject);
+            }
+            return {
+                ...prev, subjects: upDatedSubjects
+            }
+        });
+    };    
+
+    const handleConfirm = () => {
         updateFormData(data);
-        nextStep();
+        const isConfirm = window.confirm("Are you sure you want to submit?")
+        if (isConfirm) {
+            nextStep();
+        }
     };
     
     const handlePrev = () => {
@@ -40,6 +57,18 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
                             {sciSubjects.map(sciSubject => (
                                 <li key={sciSubject}>{sciSubject}</li>
                             ))}
+
+<div>
+                        <h3>Optional subjects: Choose from below</h3>
+                        {
+                            ["Agriculture", "Economics", "Commerce", "Social Studies"].map((subject) =>(
+                                <label key={subject}>
+                                    <input type="checkbox" name='subject' value= {subject} onChange = {handleChange}/>
+                                    {subject}
+                                </label>
+                            ))
+                        }
+                    </div>
                        </ul>
                     ) : (
                         <ul>
@@ -47,29 +76,23 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
                             {artSubjects.map(artSubject => (
                                 <li key={artSubject}>{artSubject}</li>
                             ))}
+
+<div>
+                        <h3>Optional subjects: Choose from below</h3>
+                        {
+                            ["Agriculture", "Economics", "Commerce", "Social Studies"].map((subject) =>(
+                                <label key={subject}>
+                                    <input type="checkbox" name='subject' value= {subject} onChange = {handleChange}/>
+                                    {subject}
+                                </label>
+                            ))
+                        }
+                    </div>
                         </ul>
                     )
                     
                   }                
-                </div>  
-
-                    {/* <div>
-                        <h3>Optional Science subjects: Choose from below</h3>
-                        <input type="checkbox" name='subject' value= "Agriculture" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Economics" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Commerce" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Social Studies" onChange = {handleChange}/>
-                    </div>
-
-                  
-
-                    <div>
-                        <h3>Optional Art subjects: Choose from below</h3>
-                        <input type="checkbox" name='subject' value= "Agriculture" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Economics" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Commerce" onChange = {handleChange}/>
-                        <input type="checkbox" name='subject' value= "Social Studies" onChange = {handleChange}/>
-                    </div> */}
+                </div>
 
 
                     <div className="toggleContainer">
@@ -80,7 +103,7 @@ export default function StepFour({nextStep, prevStep, updateFormData, sciSubject
 
                     <div className="buttonContainer">
                         <button className="prev" onClick={handlePrev}>Previous</button>
-                        <button className="next" onClick={handleNext}>Next</button>
+                        <button className="next" onClick={handleConfirm}>Confirm</button>
                     </div>
                 </div>
             </div>

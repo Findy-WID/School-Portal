@@ -15,7 +15,7 @@ export const SignIn = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         if(formData.fullname && formData.password) {
             navigate("/StudentList")
         } else{
@@ -34,6 +34,10 @@ export const SignIn = () => {
                     <input type="password" name='password' placeholder='Enter your Password' onChange = {handleChange}/>
 
                     <div className="buttonContainer">
+                        <button type='submit' className='signIn' onClick={handleSubmit}>Sign In</button>
+                    </div>
+
+                    <div className="noAcct">
                         <p>Don't have an account yet?</p>
                         <button className="" onClick={() => navigate("/signup")}>SignUp</button>
                     </div>

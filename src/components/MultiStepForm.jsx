@@ -3,7 +3,6 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
-import StepFive from "./StepFive";
 import StudentList from "./StudentList";
 
 const sciSubjects = ["Chemistry", "Biology", "Physics", "Mathematics"];
@@ -35,8 +34,7 @@ const MultiStepForm = () => {
         {step === 2 && <StepTwo nextStep = {nextStep} prevStep = {prevStep} updateFormData = {updateFormData}/>}
         {step === 3 && <StepThree nextStep = {nextStep} prevStep = {prevStep} updateFormData = {updateFormData}/>}
         {step === 4 && <StepFour nextStep = {nextStep} prevStep = {prevStep} updateFormData = {updateFormData} sciSubjects ={sciSubjects} artSubjects = {artSubjects} />}
-        {step === 5 && <StepFive nextStep = {nextStep} prevStep = {prevStep} updateFormData = {updateFormData}/>}
-        {step === 6 && <StudentList formData = {formData}/>}
+        {step === 5 && <StudentList formData = {formData}/>}
     </div>
   )
 }
